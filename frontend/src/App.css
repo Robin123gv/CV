@@ -1,34 +1,164 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* App.css - Global styles */
+.App {
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Photo hover effect */
+.photo-container {
+  position: relative;
+  overflow: hidden;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.photo-container img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.App-link {
-    color: #61dafb;
+.photo-container:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Project card hover */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Section animations */
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+  background: #0F0F10;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  color: #A1A1AA;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-item:hover,
+.admin-nav-item.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FAFAFA;
+}
+
+.admin-nav-item.active {
+  border-left: 2px solid #3B82F6;
+}
+
+/* Form inputs dark theme */
+.dark-input {
+  background: rgba(15, 15, 16, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FAFAFA;
+  transition: border-color 0.2s ease;
+}
+
+.dark-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.dark-input::placeholder {
+  color: #71717A;
+}
+
+/* Skill tag */
+.skill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: #3B82F6;
+}
+
+/* Timeline styles */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -4px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3B82F6;
+  border: 2px solid #050505;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #71717A;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
