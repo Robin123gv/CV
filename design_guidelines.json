@@ -1,0 +1,127 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "The Obsidian Archive",
+      "tone": "Intellectual, Precision, timeless, Authority",
+      "aesthetic": "Dark Academic Tech. Think 'The New York Times' meets 'Cyberpunk Terminal'. High contrast, serif headings, mono accents, noise textures.",
+      "theme_mode": "dark"
+    },
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Manrope, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "cdn_links": [
+        "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      ],
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tight leading-[0.9]",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-xl md:text-2xl font-medium",
+        "body": "text-base leading-relaxed text-zinc-400",
+        "caption": "text-sm font-mono uppercase tracking-widest text-zinc-500"
+      }
+    },
+    "colors": {
+      "palette": {
+        "background": "#050505",
+        "surface": "#0F0F10",
+        "surface_highlight": "#18181B",
+        "border": "#27272A",
+        "text_primary": "#FAFAFA",
+        "text_secondary": "#A1A1AA",
+        "primary": "#F4F4F5",
+        "accent": "#3B82F6",
+        "error": "#EF4444",
+        "success": "#10B981"
+      },
+      "usage": {
+        "app_bg": "bg-[#050505]",
+        "card_bg": "bg-[#0F0F10]",
+        "border_subtle": "border-white/10",
+        "border_active": "border-white/20",
+        "text_gradient": "bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-12 lg:p-24",
+        "section_gap": "gap-16 md:gap-32",
+        "item_gap": "gap-6"
+      },
+      "grid_systems": {
+        "bento": "grid grid-cols-1 md:grid-cols-3 gap-4",
+        "timeline": "relative border-l border-white/10 ml-4 pl-8 py-4"
+      },
+      "max_width": "max-w-7xl mx-auto"
+    },
+    "visual_enhancers": {
+      "textures": "before:content-[''] before:fixed before:inset-0 before:bg-[url('https://grainy-gradients.vercel.app/noise.svg')] before:opacity-[0.03] before:pointer-events-none before:z-50",
+      "glass": "backdrop-blur-xl bg-black/40 border border-white/10",
+      "shadows": "shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_4px_12px_rgba(0,0,0,0.5)]",
+      "animation": {
+        "hover_lift": "transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+        "fade_in": "animate-in fade-in duration-700 slide-in-from-bottom-4"
+      }
+    }
+  },
+  "components": {
+    "public_view": {
+      "structure": [
+        "Hero Section (Photo + Name + Title)",
+        "About Me (Text block)",
+        "Experience (Vertical Timeline)",
+        "Projects (Bento Grid Cards)",
+        "Skills (Categorized Lists)",
+        "Education & Certs (Compact List)",
+        "Contact & Socials (Footer)"
+      ],
+      "hero": {
+        "style": "Split layout or Centered. Name in HUGE Serif font. Photo in grayscale with grain, hover to color.",
+        "interactive": "Subtle parallax on scroll."
+      },
+      "projects": {
+        "card_style": "Aspect-ratio cards. Image cover. Title overlay on hover. Tech stack as minimal tags."
+      }
+    },
+    "admin_panel": {
+      "library": "Shadcn/UI",
+      "theme_overrides": {
+        "radius": "0.3rem",
+        "font": "Inter, sans-serif"
+      },
+      "layout": "Sidebar navigation (left) + Main Content Area (right).",
+      "features": [
+        "Dashboard Home (Quick stats/Overview)",
+        "Editors (Forms for each section)",
+        "Settings (Password update)"
+      ]
+    },
+    "ui_elements": {
+      "buttons": "rounded-full px-8 py-6 text-sm font-medium tracking-wide transition-all hover:scale-105 active:scale-95",
+      "inputs": "bg-zinc-900/50 border-white/10 focus:border-white/30 transition-colors h-12",
+      "cards": "bg-zinc-900/20 border border-white/5 hover:border-white/10 transition-all"
+    }
+  },
+  "assets": {
+    "icons": "Lucide React (Standard) or Phosphor Icons (if available)",
+    "images": {
+      "hero_placeholder": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+      "project_placeholders": [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"
+      ]
+    }
+  },
+  "universal_guidelines": [
+    "Do not use gradients for text unless it's a very subtle shine.",
+    "Always use the 'noise' texture overlay on the body to give it a premium feel.",
+    "For the Admin Login, make it extremely minimal: Just a centered input field on a black background. No boxes, no clutter.",
+    "Ensure all inputs in Admin have distinct focus states (white border).",
+    "Use 'sonner' for all toast notifications (success/error).",
+    "Mobile Responsiveness: On mobile, turn grids into single columns. Reduce font sizes slightly.",
+    "Accessibility: Ensure text contrast ratio is at least 4.5:1. Use Aria labels for icon-only buttons."
+  ]
+}
