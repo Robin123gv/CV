@@ -356,7 +356,7 @@ export default function ResumePage() {
       )}
 
       {/* Contact Footer */}
-      <footer className="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-zinc-950 border-t border-white/5" data-testid="contact-section">
+      <footer className="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-zinc-950 border-t border-white/5 relative" data-testid="contact-section">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-8">Get In Touch</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
@@ -376,17 +376,15 @@ export default function ResumePage() {
               </span>
             )}
           </div>
-          <p className="text-zinc-600 text-sm">
-            Built with care
-          </p>
-          <a 
-            href="/admin" 
-            className="inline-block mt-4 text-xs text-zinc-700 hover:text-zinc-500 transition-colors"
-            data-testid="footer-admin-link"
-          >
-            Admin
-          </a>
         </div>
+        {/* Small admin link in bottom right corner */}
+        <a 
+          href="/admin" 
+          className="absolute bottom-4 right-4 text-[10px] text-zinc-700 hover:text-zinc-500 transition-colors"
+          data-testid="footer-admin-link"
+        >
+          Admin
+        </a>
       </footer>
     </div>
   );
